@@ -375,37 +375,62 @@ function renderWorkoutLog() {
 
 
 function renderBodyDiagram() {
-  if (!guard()) return;
-  document.body.classList.remove("auth");
   mount("body-diagram-template");
-  $("#sidebar")?.classList.remove("open");
 
+  const frontView = document.getElementById("frontView");
+  const backView = document.getElementById("backView");
+  const toggleBtn = document.getElementById("toggleView");
+  const muscleInfo = document.getElementById("muscleInfo");
+  const muscleName = document.getElementById("muscleName");
+  const muscleExercises = document.getElementById("muscleExercises");
+
+  // Flip between views
+  toggleBtn.addEventListener("click", () => {
+    if (frontView.style.display !== "none") {
+      frontView.style.display = "none";
+      backView.style.display = "block";
+      toggleBtn.textContent = "Show Front View";
+    } else {
+      frontView.style.display = "block";
+      backView.style.display = "none";
+      toggleBtn.textContent = "Show Back View";
+    }
+  });
+
+  // Workout suggestions
   const exercises = {
-    chest: ["Bench Press", "Incline Bench", "Push-Ups"],
-    biceps: ["Barbell Curl", "Dumbbell Curl", "Chin-Ups"],
-    triceps: ["Tricep Dips", "Overhead Extension", "Close Grip Bench"],
-    abs: ["Crunches", "Plank", "Hanging Leg Raises"],
-    quads: ["Barbell Squat", "Lunges", "Leg Press"],
-    hamstrings: ["Romanian Deadlift", "Leg Curl", "Good Mornings"]
+    chest: ["Bench Press", "Incline Dumbbell Press", "Push-ups"],
+    biceps: ["Barbell Curl", "Hammer Curl", "Chin-ups"],
+    abs: ["Crunches", "Plank", "Leg Raises"],
+    quadsL: ["Barbell Squat", "Lunges", "Leg Press"],
+    quadsR: ["Barbell Squat", "Lunges", "Leg Press"],
+    trapezius: ["Barbell Shrugs", "Upright Row"],
+    deltsL: ["Overhead Press", "Lateral Raises"],
+    deltsR: ["Overhead Press", "Lateral Raises"],
+    tricepsL: ["Skull Crushers", "Tricep Dips", "Close-grip Bench Press"],
+    tricepsR: ["Skull Crushers", "Tricep Dips", "Close-grip Bench Press"],
+    glutes: ["Hip Thrusts", "Glute Bridge", "Step-ups"],
+    hamstringsL: ["Romanian Deadlift", "Leg Curl"],
+    hamstringsR: ["Romanian Deadlift", "Leg Curl"]
   };
 
-  // Select all clickable muscles
-  const muscleMap = $("#muscleMap");
-  const infoBox = $("#muscleInfo");
-  const nameBox = $("#muscleName");
-  const listBox = $("#muscleExercises");
-
-  muscleMap.querySelectorAll("rect").forEach(rect => {
-    rect.addEventListener("click", () => {
-      const id = rect.id;
-      nameBox.textContent = id.charAt(0).toUpperCase() + id.slice(1);
-      listBox.innerHTML = exercises[id]
-        .map(ex => `<li>${ex}</li>`)
-        .join("");
-      infoBox.style.display = "block";
+  // Attach click listeners
+  [...frontView.querySelectorAll("rect"), ...backView.querySelectorAll("rect")]
+    .forEach(muscle => {
+      muscle.addEventListener("click", () => {
+        const id = muscle.id.replace(/[LR]$/, ""); // remove L/R suffix if exists
+        muscleName.textContent = id.charAt(0).toUpperCase() + id.slice(1);
+        muscleExercises.innerHTML = "";
+        (exercises[muscle.id] || exercises[id] || []).forEach(ex => {
+          const li = document.createElement("li");
+          li.textContent = ex;
+          muscleExercises.appendChild(li);
+        });
+        muscleInfo.style.display = "block";
+      });
     });
-  });
 }
+
 
 
 
