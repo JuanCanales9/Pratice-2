@@ -377,13 +377,12 @@ function renderWorkoutLog() {
 function renderBodyDiagram() {
   if (!guard()) return;
   document.body.classList.remove("auth");
-  mount("history-template");
+  mount("body-diagram-template");  // <-- change to the correct template id
   $("#sidebar")?.classList.remove("open");
 
-  const tbody = $("#historyBody");
-  const fDate = $("#filterDate");
-  const fText = $("#filterText");
-  const fSort = $("#filterSort");
+  // add your body diagram logic here later...
+}
+
 
 
 
