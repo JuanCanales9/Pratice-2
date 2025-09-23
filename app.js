@@ -389,13 +389,8 @@ function renderBodyDiagram() {
   });
 
   const exercises = {
-chest: [
-      { type: "img", src: "/Images/BenchPress.PNG", alt: "Bench Press" },
-      { type: "video", src: "https://youtube.com/video1", title: "Chest Exercise Video" }
-    ],
-    biceps: [
-      { type: "img", src: "/Images/Biceps.PNG", alt: "Biceps" }
-    ],
+    chest: ["Bench Press", "Push-Ups", "Incline Press"],
+    biceps: ["Barbell Curl", "Dumbbell Curl"],
     abs: ["Crunches", "Plank", "Leg Raise"],
     quadsL: ["Squats", "Lunges"],
     quadsR: ["Squats", "Lunges"],
