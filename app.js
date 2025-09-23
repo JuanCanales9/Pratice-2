@@ -369,6 +369,29 @@ function renderWorkoutLog() {
   });
 }
 
+
+
+
+
+
+function BodyDiagram() {
+  if (!guard()) return;
+  document.body.classList.remove("auth");
+  mount("history-template");
+  $("#sidebar")?.classList.remove("open");
+
+  const tbody = $("#historyBody");
+  const fDate = $("#filterDate");
+  const fText = $("#filterText");
+  const fSort = $("#filterSort");
+
+
+
+
+
+
+
+
 function renderHistory() {
   if (!guard()) return;
   document.body.classList.remove("auth");
