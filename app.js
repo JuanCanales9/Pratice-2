@@ -389,28 +389,18 @@ function renderBodyDiagram() {
   });
 
   const exercises = {
-    chest: ["Bench Press", "Incline Press", "Push-Ups"],
-    abs: ["Crunches", "Leg Raises", "Plank"],
-    obliques: ["Russian Twists", "Side Plank", "Woodchoppers"],
-    obliquesR: ["Russian Twists", "Side Plank", "Woodchoppers"],
-    bicepsL: ["Barbell Curl", "Dumbbell Curl", "Chin-Ups"],
-    bicepsR: ["Barbell Curl", "Dumbbell Curl", "Chin-Ups"],
-    forearmL: ["Wrist Curls", "Reverse Curls"],
-    forearmR: ["Wrist Curls", "Reverse Curls"],
-    quadsL: ["Squats", "Lunges", "Leg Press"],
-    quadsR: ["Squats", "Lunges", "Leg Press"],
-    calvesL: ["Standing Calf Raises", "Seated Calf Raises"],
-    calvesR: ["Standing Calf Raises", "Seated Calf Raises"],
-    traps: ["Barbell Shrugs", "Rack Pulls"],
-    rearDeltsL: ["Reverse Flys", "Face Pulls"],
-    rearDeltsR: ["Reverse Flys", "Face Pulls"],
-    lats: ["Pull-Ups", "Lat Pulldown", "Rows"],
-    lowerBack: ["Hyperextensions", "Deadlifts"],
-    glutes: ["Hip Thrusts", "Glute Bridge", "Step-Ups"],
-    hamsL: ["Romanian Deadlift", "Leg Curls"],
-    hamsR: ["Romanian Deadlift", "Leg Curls"],
-    calvesBackL: ["Standing Calf Raises", "Seated Calf Raises"],
-    calvesBackR: ["Standing Calf Raises", "Seated Calf Raises"]
+    chest: ["Bench Press", "Push-Ups", "Incline Press"],
+    biceps: ["Barbell Curl", "Dumbbell Curl"],
+    abs: ["Crunches", "Plank", "Leg Raise"],
+    quadsL: ["Squats", "Lunges"],
+    quadsR: ["Squats", "Lunges"],
+    traps: ["Shrugs", "Rack Pulls"],
+    deltsL: ["Overhead Press", "Lateral Raises"],
+    deltsR: ["Overhead Press", "Lateral Raises"],
+    lats: ["Pull-Ups", "Lat Pulldown"],
+    glutes: ["Hip Thrusts", "Glute Bridge"],
+    hamsL: ["Deadlifts", "Leg Curls"],
+    hamsR: ["Deadlifts", "Leg Curls"]
   };
 
   function showMuscle(id, label) {
@@ -427,6 +417,7 @@ function renderBodyDiagram() {
     info.style.display = "block";
   }
 
+  // attach clicks
   Object.keys(exercises).forEach(id => {
     const el = document.getElementById(id);
     if (el) {
@@ -434,6 +425,7 @@ function renderBodyDiagram() {
     }
   });
 }
+
 
 
 
