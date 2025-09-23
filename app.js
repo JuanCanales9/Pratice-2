@@ -407,7 +407,6 @@ function renderBodyDiagram() {
   });
 }
 
-}
 
 
 
