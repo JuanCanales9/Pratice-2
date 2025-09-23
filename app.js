@@ -377,59 +377,55 @@ function renderWorkoutLog() {
 function renderBodyDiagram() {
   mount("body-diagram-template");
 
-  const frontView = document.getElementById("frontView");
-  const backView = document.getElementById("backView");
-  const toggleBtn = document.getElementById("toggleView");
-  const muscleInfo = document.getElementById("muscleInfo");
-  const muscleName = document.getElementById("muscleName");
-  const muscleExercises = document.getElementById("muscleExercises");
+  const toggleBtn = document.getElementById("toggleViewBtn");
+  const front = document.getElementById("frontView");
+  const back = document.getElementById("backView");
 
-  // Flip between views
   toggleBtn.addEventListener("click", () => {
-    if (frontView.style.display !== "none") {
-      frontView.style.display = "none";
-      backView.style.display = "block";
-      toggleBtn.textContent = "Show Front View";
-    } else {
-      frontView.style.display = "block";
-      backView.style.display = "none";
-      toggleBtn.textContent = "Show Back View";
-    }
+    const isFront = front.style.display !== "none";
+    front.style.display = isFront ? "none" : "block";
+    back.style.display = isFront ? "block" : "none";
+    toggleBtn.textContent = isFront ? "Show Front View" : "Show Back View";
   });
 
-  // Workout suggestions
   const exercises = {
-    chest: ["Bench Press", "Incline Dumbbell Press", "Push-ups"],
-    biceps: ["Barbell Curl", "Hammer Curl", "Chin-ups"],
-    abs: ["Crunches", "Plank", "Leg Raises"],
-    quadsL: ["Barbell Squat", "Lunges", "Leg Press"],
-    quadsR: ["Barbell Squat", "Lunges", "Leg Press"],
-    trapezius: ["Barbell Shrugs", "Upright Row"],
+    chest: ["Bench Press", "Push-Ups", "Incline Press"],
+    biceps: ["Barbell Curl", "Dumbbell Curl"],
+    abs: ["Crunches", "Plank", "Leg Raise"],
+    quadsL: ["Squats", "Lunges"],
+    quadsR: ["Squats", "Lunges"],
+    traps: ["Shrugs", "Rack Pulls"],
     deltsL: ["Overhead Press", "Lateral Raises"],
     deltsR: ["Overhead Press", "Lateral Raises"],
-    tricepsL: ["Skull Crushers", "Tricep Dips", "Close-grip Bench Press"],
-    tricepsR: ["Skull Crushers", "Tricep Dips", "Close-grip Bench Press"],
-    glutes: ["Hip Thrusts", "Glute Bridge", "Step-ups"],
-    hamstringsL: ["Romanian Deadlift", "Leg Curl"],
-    hamstringsR: ["Romanian Deadlift", "Leg Curl"]
+    lats: ["Pull-Ups", "Lat Pulldown"],
+    glutes: ["Hip Thrusts", "Glute Bridge"],
+    hamsL: ["Deadlifts", "Leg Curls"],
+    hamsR: ["Deadlifts", "Leg Curls"]
   };
 
-  // Attach click listeners
-  [...frontView.querySelectorAll("rect"), ...backView.querySelectorAll("rect")]
-    .forEach(muscle => {
-      muscle.addEventListener("click", () => {
-        const id = muscle.id.replace(/[LR]$/, ""); // remove L/R suffix if exists
-        muscleName.textContent = id.charAt(0).toUpperCase() + id.slice(1);
-        muscleExercises.innerHTML = "";
-        (exercises[muscle.id] || exercises[id] || []).forEach(ex => {
-          const li = document.createElement("li");
-          li.textContent = ex;
-          muscleExercises.appendChild(li);
-        });
-        muscleInfo.style.display = "block";
-      });
+  function showMuscle(id, label) {
+    const info = document.getElementById("muscleInfo");
+    const name = document.getElementById("muscleName");
+    const list = document.getElementById("muscleExercises");
+    name.textContent = label;
+    list.innerHTML = "";
+    (exercises[id] || []).forEach(ex => {
+      const li = document.createElement("li");
+      li.textContent = ex;
+      list.appendChild(li);
     });
+    info.style.display = "block";
+  }
+
+  // attach clicks
+  Object.keys(exercises).forEach(id => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.addEventListener("click", () => showMuscle(id, id.toUpperCase()));
+    }
+  });
 }
+
 
 
 
