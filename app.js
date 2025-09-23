@@ -377,10 +377,36 @@ function renderWorkoutLog() {
 function renderBodyDiagram() {
   if (!guard()) return;
   document.body.classList.remove("auth");
-  mount("body-diagram-template");  // <-- change to the correct template id
+  mount("body-diagram-template");
   $("#sidebar")?.classList.remove("open");
 
-  // add your body diagram logic here later...
+  const exercises = {
+    chest: ["Bench Press", "Incline Bench", "Push-Ups"],
+    biceps: ["Barbell Curl", "Dumbbell Curl", "Chin-Ups"],
+    triceps: ["Tricep Dips", "Overhead Extension", "Close Grip Bench"],
+    abs: ["Crunches", "Plank", "Hanging Leg Raises"],
+    quads: ["Barbell Squat", "Lunges", "Leg Press"],
+    hamstrings: ["Romanian Deadlift", "Leg Curl", "Good Mornings"]
+  };
+
+  // Select all clickable muscles
+  const muscleMap = $("#muscleMap");
+  const infoBox = $("#muscleInfo");
+  const nameBox = $("#muscleName");
+  const listBox = $("#muscleExercises");
+
+  muscleMap.querySelectorAll("rect").forEach(rect => {
+    rect.addEventListener("click", () => {
+      const id = rect.id;
+      nameBox.textContent = id.charAt(0).toUpperCase() + id.slice(1);
+      listBox.innerHTML = exercises[id]
+        .map(ex => `<li>${ex}</li>`)
+        .join("");
+      infoBox.style.display = "block";
+    });
+  });
+}
+
 }
 
 
