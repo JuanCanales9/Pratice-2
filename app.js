@@ -374,7 +374,7 @@ function renderWorkoutLog() {
 
 
 
-function BodyDiagram() {
+function renderBodyDiagram() {
   if (!guard()) return;
   document.body.classList.remove("auth");
   mount("history-template");
