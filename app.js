@@ -137,6 +137,7 @@ const routes = {
   "#/register": renderRegister,
   "#/home": renderHome,
   "#/workouts/log": renderWorkoutLog,
+  "#/workouts/diagram": renderBodyDiagram,
   "#/workouts/history": renderHistory,
   "#/progress": renderProgress,
   "#/library": renderLibrary,
