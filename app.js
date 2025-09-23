@@ -435,56 +435,6 @@ function renderBodyDiagram() {
   });
 }
 
-// Toggle front/back view
-document.addEventListener("click", (e) => {
-  if (e.target.id === "toggleViewBtn") {
-    const front = document.getElementById("frontView");
-    const back = document.getElementById("backView");
-    if (front.style.display === "none") {
-      front.style.display = "block";
-      back.style.display = "none";
-      e.target.textContent = "Show Back";
-    } else {
-      front.style.display = "none";
-      back.style.display = "block";
-      e.target.textContent = "Show Front";
-    }
-  }
-});
-
-// Muscle map data (example — expand as needed)
-const muscleExercises = {
-  chest: ["Bench Press", "Push-Ups", "Incline Dumbbell Press"],
-  biceps: ["Barbell Curl", "Hammer Curl"],
-  triceps: ["Dips", "Close-Grip Bench Press"],
-  quads: ["Squats", "Lunges"],
-  hamstrings: ["Deadlifts", "Leg Curls"],
-  calves: ["Standing Calf Raises", "Seated Calf Raises"],
-  shoulders: ["Overhead Press", "Lateral Raises"],
-  traps: ["Shrugs", "Face Pulls"],
-  lats: ["Pull-Ups", "Lat Pulldown"],
-  abs: ["Crunches", "Planks"],
-  obliques: ["Side Plank", "Russian Twists"],
-  glutes: ["Hip Thrusts", "Glute Bridge"]
-};
-
-// Attach click listeners to all muscle parts
-document.addEventListener("click", (e) => {
-  if (muscleExercises[e.target.id]) {
-    const info = document.getElementById("muscleInfo");
-    const name = document.getElementById("muscleName");
-    const list = document.getElementById("muscleExercises");
-
-    name.textContent = e.target.id.charAt(0).toUpperCase() + e.target.id.slice(1);
-    list.innerHTML = "";
-    muscleExercises[e.target.id].forEach(ex => {
-      const li = document.createElement("li");
-      li.textContent = ex;
-      list.appendChild(li);
-    });
-    info.style.display = "block";
-  }
-});
 
 
 
