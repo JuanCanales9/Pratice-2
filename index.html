@@ -188,41 +188,45 @@
           </section>
         </template>
 
+
+
+
+
+
+
+
+
+
+
+        
         <!-- Body Diagram -->
-        <template id="body-diagram-template">
-            <section class="card">
-                <h2> Body Diagram </h2>
-            <form id="workoutForm" class="form" novalidate>
-              <div class="grid cols-2">
-                <input id="woDate" class="input" type="date" required />
-                <input id="woExercise" class="input" placeholder="Exercise" list="exerciseList" required />
-                <datalist id="exerciseList">
-                  <option> Barbell Squat </option>
-                  <option> Bench Press </option>
-                  <option> Deadlift </option>
-                  <option> Overhead Press </option>
-                  <option> Lat Pulldown </option>
-                  <option> Dumbbell Row </option>
-                  <option> Incline Bench </option>
-                </datalist>
-              </div>
+<template id="body-diagram-template">
+  <section class="card">
+    <h2> Body Diagram </h2>
+    <p class="helper"> Click on a muscle group to see suggested exercises </p>
 
-              <div class="grid cols-3">
-                <input id="woSets" class="input" type="number" min="1" step="1" placeholder="Sets" required />
-                <input id="woReps" class="input" type="number" min="1" step="1" placeholder="Reps" required />
-                <input id="woWeight" class="input" type="number" min="0" step="0.5" placeholder="Weight" required />
-              </div>
+    <div class="body-diagram">
+      <svg id="muscleMap" viewBox="0 0 200 400" width="200" height="400">
+        <!-- Chest -->
+        <rect id="chest" x="70" y="60" width="60" height="40" fill="#ccc" stroke="#333" />
+        <!-- Arms -->
+        <rect id="biceps" x="40" y="60" width="20" height="60" fill="#ccc" stroke="#333" />
+        <rect id="triceps" x="140" y="60" width="20" height="60" fill="#ccc" stroke="#333" />
+        <!-- Abs -->
+        <rect id="abs" x="90" y="110" width="40" height="60" fill="#ccc" stroke="#333" />
+        <!-- Legs -->
+        <rect id="quads" x="70" y="180" width="30" height="100" fill="#ccc" stroke="#333" />
+        <rect id="hamstrings" x="110" y="180" width="30" height="100" fill="#ccc" stroke="#333" />
+      </svg>
+    </div>
 
-              <div class="row">
-                <button type="reset" class="btn btn-outline"> Reset </button>
-                <button type="submit" class="btn btn-primary"> Save Entry </button>
-              </div>
+    <div id="muscleInfo" class="muscle-info card" style="margin-top: 16px; display:none;">
+      <h3 id="muscleName"></h3>
+      <ul id="muscleExercises"></ul>
+    </div>
+  </section>
+</template>
 
-              <div id="woErr" class="alert error"></div>
-              <div id="woOK" class="alert success"></div>
-            </form>
-          </section>
-        </template>
 
 
 
