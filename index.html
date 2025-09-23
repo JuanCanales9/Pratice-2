@@ -199,24 +199,46 @@
 
 
         
-        <!-- Body Diagram -->
+<!-- Body Diagram -->
 <template id="body-diagram-template">
   <section class="card">
     <h2> Body Diagram </h2>
     <p class="helper"> Click on a muscle group to see suggested exercises </p>
 
+    <div class="row" style="margin-bottom: 12px;">
+      <button id="toggleView" class="btn btn-outline"> Show Back View </button>
+    </div>
+
     <div class="body-diagram">
-      <svg id="muscleMap" viewBox="0 0 200 400" width="200" height="400">
+      <!-- FRONT VIEW -->
+      <svg id="frontView" viewBox="0 0 200 400" width="220" height="440">
         <!-- Chest -->
-        <rect id="chest" x="70" y="60" width="60" height="40" fill="#ccc" stroke="#333" />
-        <!-- Arms -->
-        <rect id="biceps" x="40" y="60" width="20" height="60" fill="#ccc" stroke="#333" />
-        <rect id="triceps" x="140" y="60" width="20" height="60" fill="#ccc" stroke="#333" />
+        <rect id="chest" x="70" y="60" width="60" height="40" fill="#e57373" stroke="#333"/>
+        <!-- Biceps -->
+        <rect id="biceps" x="40" y="60" width="20" height="60" fill="#fdd835" stroke="#333"/>
+        <rect id="bicepsR" x="140" y="60" width="20" height="60" fill="#fdd835" stroke="#333"/>
         <!-- Abs -->
-        <rect id="abs" x="90" y="110" width="40" height="60" fill="#ccc" stroke="#333" />
-        <!-- Legs -->
-        <rect id="quads" x="70" y="180" width="30" height="100" fill="#ccc" stroke="#333" />
-        <rect id="hamstrings" x="110" y="180" width="30" height="100" fill="#ccc" stroke="#333" />
+        <rect id="abs" x="90" y="110" width="40" height="60" fill="#81c784" stroke="#333"/>
+        <!-- Quads -->
+        <rect id="quadsL" x="70" y="180" width="30" height="100" fill="#64b5f6" stroke="#333"/>
+        <rect id="quadsR" x="100" y="180" width="30" height="100" fill="#64b5f6" stroke="#333"/>
+      </svg>
+
+      <!-- BACK VIEW -->
+      <svg id="backView" viewBox="0 0 200 400" width="220" height="440" style="display:none;">
+        <!-- Trapezius -->
+        <rect id="trapezius" x="70" y="40" width="60" height="40" fill="#ef5350" stroke="#333"/>
+        <!-- Delts -->
+        <rect id="deltsL" x="40" y="60" width="30" height="40" fill="#ffb74d" stroke="#333"/>
+        <rect id="deltsR" x="130" y="60" width="30" height="40" fill="#ffb74d" stroke="#333"/>
+        <!-- Triceps -->
+        <rect id="tricepsL" x="40" y="100" width="20" height="60" fill="#fdd835" stroke="#333"/>
+        <rect id="tricepsR" x="140" y="100" width="20" height="60" fill="#fdd835" stroke="#333"/>
+        <!-- Glutes -->
+        <rect id="glutes" x="80" y="160" width="40" height="40" fill="#90caf9" stroke="#333"/>
+        <!-- Hamstrings -->
+        <rect id="hamstringsL" x="70" y="200" width="30" height="100" fill="#9575cd" stroke="#333"/>
+        <rect id="hamstringsR" x="100" y="200" width="30" height="100" fill="#9575cd" stroke="#333"/>
       </svg>
     </div>
 
@@ -226,6 +248,7 @@
     </div>
   </section>
 </template>
+
 
 
 
