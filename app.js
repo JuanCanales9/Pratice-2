@@ -138,6 +138,7 @@ const routes = {
   "#/home": renderHome,
   "#/workouts/log": renderWorkoutLog,
   "#/workouts/diagram": renderBodyDiagram,
+  "#/workouts/chest": renderChest,
   "#/workouts/history": renderHistory,
   "#/progress": renderProgress,
   "#/library": renderLibrary,
@@ -388,22 +389,13 @@ function renderBodyDiagram() {
     toggleBtn.textContent = isFront ? "Show Front View" : "Show Back View";
   });
 
-  const exercises = {
-    chest: [      
-      { type: "img", src: "/Images/BenchPress.PNG", alt: "Bench Press" },
-      { type: "video", src: "https://youtube.com/video1", title: "Chest Exercise Video" }],
-    biceps: ["Barbell Curl", "Dumbbell Curl"],
-    abs: ["Crunches", "Plank", "Leg Raise"],
-    quadsL: ["Squats", "Lunges"],
-    quadsR: ["Squats", "Lunges"],
-    traps: ["Shrugs", "Rack Pulls"],
-    deltsL: ["Overhead Press", "Lateral Raises"],
-    deltsR: ["Overhead Press", "Lateral Raises"],
-    lats: ["Pull-Ups", "Lat Pulldown"],
-    glutes: ["Hip Thrusts", "Glute Bridge"],
-    hamsL: ["Deadlifts", "Leg Curls"],
-    hamsR: ["Deadlifts", "Leg Curls"]
-  };
+const chest = document.getElementById("chest");
+if (chest) {
+  chest.addEventListener("click", () => {
+    location.hash = "#/workouts/chest";
+  });
+}
+
 
   function showMuscle(id, label) {
     const info = document.getElementById("muscleInfo");
@@ -427,6 +419,18 @@ function renderBodyDiagram() {
     }
   });
 }
+
+
+function renderChest() {
+  if (!guard()) return;
+  document.body.classList.remove("auth");
+  mount("chest-template");   // assumes you have <template id="chest-template"> in your HTML
+  $("#sidebar")?.classList.remove("open");
+}
+
+
+
+
 
 
 
