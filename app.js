@@ -406,7 +406,7 @@ function renderBodyDiagram() {
   });
 
 const muscles = [
-  "chest", "biceps", "abs", "obliques", "forearms", "quads", "calves",
+  "chest", "biceps", "biceps2", "abs", "obliques", "forearms", "quads", "calves",
   "traps", "rearDelts", "lats", "lowerBack", "glutes", "hamstrings"
 ];
 
