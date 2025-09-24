@@ -215,7 +215,7 @@
         <!-- Chest -->
         <rect id="chest" x="70" y="60" width="60" height="40" fill="#e57373" stroke="#333" />
         <!-- Biceps -->
-        <rect id="biceps" x="40" y="60" width="20" height="60" fill="#ffeb3b" stroke="#333" />
+        <rect id="biceps1" x="40" y="60" width="20" height="60" fill="#ffeb3b" stroke="#333" />
         <rect id="biceps2" x="140" y="60" width="20" height="60" fill="#ffeb3b" stroke="#333" />
         <!-- Abs -->
         <rect id="abs" x="90" y="110" width="40" height="60" fill="#81c784" stroke="#333" />
@@ -283,16 +283,34 @@
   </section>
 </template>
 
+<!-- TEMPLATE -->
 <template id="biceps-template">
   <section class="card">
     <h2>Biceps Workouts</h2>
     <a href="https://www.youtube.com/shorts/hWbUlkb5Ms4" target="_blank">
-        <img src="/Images/Bench Press.PNG" alt="Bench Press">
+      <img src="/Images/Bench Press.PNG" alt="Bench Press">
     </a>
     <!-- put your biceps exercise images + links -->
   </section>
 </template>
+
+<!-- CONTAINERS -->
+<div id="biceps1"></div>
 <div id="biceps2"></div>
+
+<!-- SCRIPT TO DUPLICATE CONTENT -->
+<script>
+  const template = document.getElementById("biceps-template");
+
+  // Clone for biceps1
+  const biceps1 = document.getElementById("biceps1");
+  biceps1.appendChild(template.content.cloneNode(true));
+
+  // Clone again for biceps2
+  const biceps2 = document.getElementById("biceps2");
+  biceps2.appendChild(template.content.cloneNode(true));
+</script>
+
 
 <template id="abs-template">
   <section class="card">
