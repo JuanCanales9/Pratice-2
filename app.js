@@ -388,25 +388,34 @@ function renderBodyDiagram() {
     toggleBtn.textContent = isFront ? "Show Front View" : "Show Back View";
   });
 
-const chest = document.getElementById("chest");
-if (chest) {
-  chest.addEventListener("click", () => {
-    location.hash = "#/workouts/chest";
-  });
+const muscles = [
+  "chest", "biceps", "abs", "obliques", "forearms", "quads", "calves",
+  "traps", "rearDelts", "lats", "lowerBack", "glutes", "hamstrings"
+];
+
+muscles.forEach(muscle => {
+  const el = document.getElementById(muscle);
+  if (el) {
+    el.addEventListener("click", () => {
+      location.hash = `#/workouts/${muscle}`;
+    });
+  }
+});
+
+
+
+
+
 }
 
 
-
-
-}
-
-
-function renderChest() {
+function renderMuscle(muscle) {
   if (!guard()) return;
   document.body.classList.remove("auth");
-  mount("chest-template");   // assumes you have <template id="chest-template"> in your HTML
+  mount(`${muscle}-template`);   // expects <template id="biceps-template"> etc
   $("#sidebar")?.classList.remove("open");
 }
+
 
 
 
