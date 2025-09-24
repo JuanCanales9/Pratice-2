@@ -144,20 +144,7 @@ const routes = {
   "#/settings": renderSettings,
 
 
-  "#/workouts/chest": () => renderMuscle("chest"),
-  "#/workouts/biceps": () => renderMuscle("biceps"),
-  "#/workouts/biceps2": () => renderMuscle("biceps2"),
-  "#/workouts/abs": () => renderMuscle("abs"),
-  "#/workouts/obliques": () => renderMuscle("obliques"),
-  "#/workouts/forearms": () => renderMuscle("forearms"),
-  "#/workouts/quads": () => renderMuscle("quads"),
-  "#/workouts/calves": () => renderMuscle("calves"),
-  "#/workouts/traps": () => renderMuscle("traps"),
-  "#/workouts/rearDelts": () => renderMuscle("rearDelts"),
-  "#/workouts/lats": () => renderMuscle("lats"),
-  "#/workouts/lowerBack": () => renderMuscle("lowerBack"),
-  "#/workouts/glutes": () => renderMuscle("glutes"),
-  "#/workouts/hamstrings": () => renderMuscle("hamstrings")
+-
 
 };
 
