@@ -397,19 +397,6 @@ if (chest) {
 }
 
 
-  function showMuscle(id, label) {
-    const info = document.getElementById("muscleInfo");
-    const name = document.getElementById("muscleName");
-    const list = document.getElementById("muscleExercises");
-    name.textContent = label;
-    list.innerHTML = "";
-    (exercises[id] || []).forEach(ex => {
-      const li = document.createElement("li");
-      li.textContent = ex;
-      list.appendChild(li);
-    });
-    info.style.display = "block";
-  }
 
   // attach clicks
   Object.keys(exercises).forEach(id => {
@@ -431,26 +418,6 @@ function renderChest() {
 
 
 
-
-
-
-
-
-
-// Function to activate diagram interactivity
-function setupBodyDiagram() {
-  const chest = document.getElementById("chest");
-  
-  if (chest) {
-    chest.addEventListener("click", () => {
-      location.hash = "#/workouts/chest"; // change the route
-    });
-  }
-}
-
-case "#/workouts/chest":
-  renderTemplate("chest-template");
-  break;
 
 
 
