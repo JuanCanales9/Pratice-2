@@ -433,6 +433,21 @@ function renderBodyDiagram() {
 
 
 
+// Function to activate diagram interactivity
+function setupBodyDiagram() {
+  const chest = document.getElementById("chest");
+  
+  if (chest) {
+    chest.addEventListener("click", () => {
+      location.hash = "#/workouts/chest"; // change the route
+    });
+  }
+}
+
+
+
+
+
 
 
 
