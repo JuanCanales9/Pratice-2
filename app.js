@@ -146,6 +146,7 @@ const routes = {
 
   "#/workouts/chest": () => renderMuscle("chest"),
   "#/workouts/biceps": () => renderMuscle("biceps"),
+  "#/workouts/biceps2": () => renderMuscle("biceps2"),
   "#/workouts/abs": () => renderMuscle("abs"),
   "#/workouts/obliques": () => renderMuscle("obliques"),
   "#/workouts/forearms": () => renderMuscle("forearms"),
