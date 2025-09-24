@@ -398,13 +398,7 @@ if (chest) {
 
 
 
-  // attach clicks
-  Object.keys(exercises).forEach(id => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.addEventListener("click", () => showMuscle(id, id.toUpperCase()));
-    }
-  });
+
 }
 
 
