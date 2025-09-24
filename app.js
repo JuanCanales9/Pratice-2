@@ -444,6 +444,9 @@ function setupBodyDiagram() {
   }
 }
 
+case "#/workouts/chest":
+  renderTemplate("chest-template");
+  break;
 
 
 
