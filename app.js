@@ -155,11 +155,13 @@ const routes = {
   "#/workouts/quads": () => renderMuscle("quads"),
   "#/workouts/calves": () => renderMuscle("calves"),
   "#/workouts/traps": () => renderMuscle("traps"),
-  "#/workouts/rearDelts": () => renderMuscle("rearDelts"),
+  "#/workouts/deltsL": () => renderMuscle("deltsL"),
+  "#/workouts/deltsR": () => renderMuscle("deltsR"),
   "#/workouts/lats": () => renderMuscle("lats"),
   "#/workouts/lowerBack": () => renderMuscle("lowerBack"),
   "#/workouts/glutes": () => renderMuscle("glutes"),
-  "#/workouts/hamstrings": () => renderMuscle("hamstrings")
+  "#/workouts/hamsL": () => renderMuscle("hamsL")
+  "#/workouts/hamsR": () => renderMuscle("hamsR")
 
 };
 
@@ -408,9 +410,9 @@ function renderBodyDiagram() {
   });
 
 const muscles = [
-  "chest", "biceps", "biceps2", "abs", "quadsL", "quadsR"
+  "chest", "biceps", "biceps2", "abs", "quadsL", "quadsR",
   "obliques", "forearms", "quads", "calves",
-  "traps", "rearDelts", "lats", "lowerBack", "glutes", "hamstrings"
+  "traps", "deltsL", "deltsR", "lats", "lowerBack", "glutes", "hamsL", "hamsR"
 ];
 
 muscles.forEach(muscle => {
