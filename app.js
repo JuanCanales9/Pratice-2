@@ -160,7 +160,7 @@ const routes = {
   "#/workouts/lats": () => renderMuscle("lats"),
   "#/workouts/lowerBack": () => renderMuscle("lowerBack"),
   "#/workouts/glutes": () => renderMuscle("glutes"),
-  "#/workouts/hamsL": () => renderMuscle("hamsL")
+  "#/workouts/hamsL": () => renderMuscle("hamsL"),
   "#/workouts/hamsR": () => renderMuscle("hamsR")
 
 };
