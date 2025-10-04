@@ -275,8 +275,6 @@ function renderWorkoutLog() {
 }
 
 function renderBodyDiagram() {
-  if (!guard()) return;
-  document.body.classList.remove("auth");
   mount("body-diagram-template");
 
   const toggleBtn = document.getElementById("toggleViewBtn");
@@ -290,42 +288,33 @@ function renderBodyDiagram() {
     toggleBtn.textContent = isFront ? "Show Front View" : "Show Back View";
   });
 
-  const exercises = {
-    chest: ["Bench Press", "Push-Ups", "Incline Press"],
-    biceps: ["Barbell Curl", "Dumbbell Curl"],
-    abs: ["Crunches", "Plank", "Leg Raise"],
-    quadsL: ["Squats", "Lunges"],
-    quadsR: ["Squats", "Lunges"],
-    traps: ["Shrugs", "Rack Pulls"],
-    deltsL: ["Overhead Press", "Lateral Raises"],
-    deltsR: ["Overhead Press", "Lateral Raises"],
-    lats: ["Pull-Ups", "Lat Pulldown"],
-    glutes: ["Hip Thrusts", "Glute Bridge"],
-    hamsL: ["Deadlifts", "Leg Curls"],
-    hamsR: ["Deadlifts", "Leg Curls"]
-  };
+const muscles = [
+  "chest", "biceps", "biceps2", "abs", "quadsL", "quadsR",
+  "obliques", "forearms", "quads", "calves",
+  "traps", "deltsL", "deltsR", "lats", "lowerBack", "glutes", "hamsL", "hamsR"
+];
 
-  function showMuscle(id, label) {
-    const info = document.getElementById("muscleInfo");
-    const name = document.getElementById("muscleName");
-    const list = document.getElementById("muscleExercises");
-    name.textContent = label;
-    list.innerHTML = "";
-    (exercises[id] || []).forEach(ex => {
-      const li = document.createElement("li");
-      li.textContent = ex;
-      list.appendChild(li);
+muscles.forEach(muscle => {
+  const el = document.getElementById(muscle);
+  if (el) {
+    el.addEventListener("click", () => {
+      location.hash = `#/workouts/${muscle}`;
     });
-    info.style.display = "block";
   }
+});
 
-  // attach clicks to defined ids; map biceps2 -> biceps
-  Object.keys(exercises).forEach(id => {
-    const el = document.getElementById(id);
-    if (el) el.addEventListener("click", () => showMuscle(id, id.toUpperCase()));
-  });
-  const b2 = document.getElementById("biceps2");
-  if (b2) b2.addEventListener("click", () => showMuscle("biceps", "BICEPS"));
+
+
+
+
+}
+
+
+function renderMuscle(muscle) {
+  if (!guard()) return;
+  document.body.classList.remove("auth");
+  mount(`${muscle}-template`);   // expects <template id="biceps-template"> etc
+  $("#sidebar")?.classList.remove("open");
 }
 
 function renderHistory() {
