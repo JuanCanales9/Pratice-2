@@ -67,23 +67,23 @@ body{
 
 .images-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 per row */
+  grid-template-columns: repeat(3, 1fr); /* 3 images per row */
   gap: 15px; /* space between images */
   justify-items: center;
 }
 
 .images-grid img {
-  width: 200px;     /* all same width */
-  height: 200px;    /* all same height */
-  object-fit: cover; /* crops image to fill box neatly */
+  width: 250px;     /* make all images same width */
+  height: 200px;    /* consistent height */
+  object-fit: cover; /* crops nicely without stretching */
   border-radius: 10px;
   transition: transform 0.2s ease;
 }
 
-
 .images-grid img:hover {
   transform: scale(1.05);
 }
+
 
 
 
