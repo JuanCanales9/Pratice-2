@@ -65,7 +65,12 @@ body{
     overflow: auto;
 }
 
-
+img{
+    display: block;
+    margin: 10px;
+    width: 100px;
+    height: 100px;
+}
 
 
 
