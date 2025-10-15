@@ -65,30 +65,6 @@ body{
     overflow: auto;
 }
 
-.card {
-  text-align: center;
-  margin: 20px auto;
-  max-width: 900px;
-}
-
-.chest-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 per row */
-  gap: 15px; /* space between images */
-  justify-items: center;
-}
-
-.chest-grid img {
-  width: 100%;
-  max-width: 250px; /* control image size */
-  height: auto;
-  border-radius: 10px;
-  transition: transform 0.2s ease;
-}
-
-.chest-grid img:hover {
-  transform: scale(1.05);
-}
 
 
 
