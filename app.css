@@ -73,13 +73,13 @@ body{
 }
 
 .chest-grid img {
-  width: 100px;
-  /* max-width: 250px; control image size */
-  height: 100px;
+  width: 200px;     /* all same width */
+  height: 200px;    /* all same height */
+  object-fit: cover; /* crops image to fill box neatly */
   border-radius: 10px;
   transition: transform 0.2s ease;
-  object-fit: cover;
 }
+
 
 .chest-grid img:hover {
   transform: scale(1.05);
