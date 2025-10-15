@@ -73,7 +73,7 @@ body{
 }
 
 .chest-grid img {
-  width: 200%;     /* all same width */
+  width: 200px;     /* all same width */
   height: 200px;    /* all same height */
   object-fit: cover; /* crops image to fill box neatly */
   border-radius: 10px;
