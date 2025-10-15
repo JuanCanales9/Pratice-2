@@ -78,6 +78,7 @@ body{
   height: auto;
   border-radius: 10px;
   transition: transform 0.2s ease;
+  object-fit: cover;
 }
 
 .chest-grid img:hover {
