@@ -65,23 +65,23 @@ body{
     overflow: auto;
 }
 
-.chest-grid {
+.images-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 per row */
   gap: 15px; /* space between images */
   justify-items: center;
 }
 
-.chest-grid img {
-  width: 100px;     /* all same width */
-  height: 100px;    /* all same height */
+.images-grid img {
+  width: 200px;     /* all same width */
+  height: 200px;    /* all same height */
   object-fit: cover; /* crops image to fill box neatly */
   border-radius: 10px;
   transition: transform 0.2s ease;
 }
 
 
-.chest-grid img:hover {
+.images-grid img:hover {
   transform: scale(1.05);
 }
 
