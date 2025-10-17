@@ -83,6 +83,40 @@ body{
 .images-grid img:hover {
   transform: scale(1.05);
 }
+.body-map {
+  position: relative;
+  background-image: url('Images/muscle-diagram.png'); /* use your uploaded image */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 600px;
+  height: 600px;
+  margin: auto;
+}
+.muscle {
+  position: absolute;
+  background: rgba(255, 0, 0, 0.2); /* semi-transparent to visualize positions while editing */
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.muscle:hover {
+  background: rgba(255, 0, 0, 0.4);
+}
+
+.chest { top: 150px; left: 220px; width: 150px; height: 80px; }
+.biceps { top: 180px; left: 120px; width: 60px; height: 120px; }
+.abs { top: 250px; left: 250px; width: 100px; height: 100px; }
+.quads { top: 370px; left: 230px; width: 120px; height: 160px; }
+
+
+
+
+
+
+
+
 
 
 
