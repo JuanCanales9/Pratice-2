@@ -74,7 +74,7 @@ body{
 
 .images-grid img {
   width: 250px;     /* make all images same width */
-  height: 200px;    /* consistent height */
+  height: 250px;    /* consistent height */
   object-fit: cover; /* crops nicely without stretching */
   border-radius: 10px;
   transition: transform 0.2s ease;
