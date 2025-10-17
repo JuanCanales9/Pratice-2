@@ -140,10 +140,7 @@ const routes = {
   "#/workouts/diagram": renderBodyDiagram,
   "#/workouts/history": renderHistory,
   "#/progress": renderProgress,
-  "#/library": renderLibrary,
   "#/settings": renderSettings,
-
-
   "#/workouts/chest": () => renderMuscle("chest"),
   "#/workouts/biceps": () => renderMuscle("biceps"),
   "#/workouts/biceps2": () => renderMuscle("biceps2"),
@@ -423,13 +420,7 @@ muscles.forEach(muscle => {
     });
   }
 });
-
-
-
-
-
 }
-
 
 function renderMuscle(muscle) {
   if (!guard()) return;
