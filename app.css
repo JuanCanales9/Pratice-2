@@ -83,34 +83,6 @@ body{
 .images-grid img:hover {
   transform: scale(1.05);
 }
-.body-map {
-  position: relative;
-  background-image: url('Images/muscle-diagram.png'); /* use your uploaded image */
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 600px;
-  height: 600px;
-  margin: auto;
-}
-.muscle {
-  position: absolute;
-  background: rgba(255, 0, 0, 0.2); /* semi-transparent to visualize positions while editing */
-  border: none;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.muscle:hover {
-  background: rgba(255, 0, 0, 0.4);
-}
-
-.chest { top: 150px; left: 220px; width: 150px; height: 80px; }
-.biceps { top: 180px; left: 120px; width: 60px; height: 120px; }
-.abs { top: 250px; left: 250px; width: 100px; height: 100px; }
-.quads { top: 370px; left: 230px; width: 120px; height: 160px; }
-
-
 
 
 
@@ -421,3 +393,42 @@ body.auth .alert{margin-top: 10px;}
 .table tr:hover td{
     background: rgba(255, 255, 255, .03);
 }
+.body-map-container {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.body-map {
+  position: relative;
+  background-image: url('Images/muscle-diagram.png'); /* replace with your actual file path */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 600px;
+  height: 600px;
+  margin: 0 auto;
+}
+
+/* Base style for all clickable zones */
+.muscle {
+  position: absolute;
+  background: rgba(255, 0, 0, 0.25); /* visible while editing */
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background 0.2s;
+}
+
+.muscle:hover {
+  background: rgba(255, 0, 0, 0.45);
+}
+
+/* Muscle positions (tweak as needed) */
+.chest { top: 140px; left: 220px; width: 160px; height: 90px; }
+.biceps { top: 180px; left: 120px; width: 70px; height: 130px; }
+.triceps { top: 180px; left: 410px; width: 70px; height: 130px; }
+.abs { top: 240px; left: 250px; width: 100px; height: 130px; }
+.quads { top: 380px; left: 230px; width: 130px; height: 180px; }
+.shoulders { top: 110px; left: 210px; width: 180px; height: 60px; }
+.back { top: 150px; left: 230px; width: 150px; height: 130px; }
+.calves { top: 540px; left: 250px; width: 100px; height: 80px; }
