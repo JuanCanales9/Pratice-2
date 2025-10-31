@@ -449,14 +449,20 @@ function renderBodyDiagram(){
     const exercises = {
         chest: [
             {name: "Bench Press", img: "images/chest/Bench-Press.jpg", url: "https://www.youtube.com/embed/hWbUlkb5Ms4"},
-            {name: "Dumbbell Chest Flies", img: "images/chest/Dumbbell-Chest-Flies.jpg", url: ""},
-            {name: "Dumbbell Chest Press", img: "images/chest/Dumbbell-Chest-Press.jpg", url: ""},
-            {name: "Dumbbell Incline Chest Press", img: "images/chest/Dumbbell-Incline-Chest-Press.jpg", url: ""},
-            {name: "High-to-Low Cable Flies", img: "images/chest/High-to-Low-Cable-Crossover.jpg", url: ""},
-            {name: "Incline Bench Press", img: "images/chest/Incline-Bench-Press.jpg", url: ""},
-            {name: "Incline Chest Flies", img: "images/chest/Incline-Chest-Flies.jpg", url: ""},
-            {name: "Machine Chest Flies", img: "images/chest/Machine-Chest-Flies.jpg", url: ""},
-            {name: "Machine Chest Press", img: "images/chest/Machine-Chest-Press.jpg", url: ""}
+            {name: "Close-Grip Bench Press", img: "images/chest/Dumbbell-Chest-Flies.jpg", url: ""},
+            {name: "Wide-Grip Bench Press", img: "images/chest/Dumbbell-Chest-Press.jpg", url: ""},
+            {name: "Incline Bench Press", img: "images/chest/Dumbbell-Incline-Chest-Press.jpg", url: ""},
+            {name: "Decline Barbell Press", img: "images/chest/High-to-Low-Cable-Crossover.jpg", url: ""},
+            {name: "Incline Dumbbell Bench Press", img: "images/chest/Incline-Bench-Press.jpg", url: ""},
+            {name: "Decline Dumbbell Bench Press", img: "images/chest/Incline-Chest-Flies.jpg", url: ""},
+            {name: "Dumbbell Chest Press", img: "images/chest/Machine-Chest-Flies.jpg", url: ""},
+            {name: "Dumbbell Chest Flyes", img: "images/chest/Machine-Chest-Press.jpg", url: "https://www.youtube.com/shorts/Qu7-ceCvq7w"},
+            {name: "Machine Fly", img: "images/chest/Incline-Bench-Press.jpg", url: ""},
+            {name: "Machine Chest Press", img: "images/chest/Incline-Chest-Flies.jpg", url: ""},
+            {name: "Dumbbell Pullover", img: "images/chest/Machine-Chest-Flies.jpg", url: ""},
+            {name: "Cable Flyes", img: "images/chest/Incline-Bench-Press.jpg", url: ""},
+            {name: "Incline Cable Flyes", img: "images/chest/Incline-Chest-Flies.jpg", url: ""},
+            {name: "Cable Crossover", img: "images/chest/Machine-Chest-Flies.jpg", url: ""}
         ],
         biceps: [
             {name: "Alternating Dumbbell Curls", img: "images/biceps/Alternating-Dumbbell-Curls.jpg", url: ""},
