@@ -599,7 +599,7 @@ function renderBodyDiagram(){
             {name: "Cable Pull Through", img: "images/quads/Cable Pull Through.jpg", url: "https://www.youtube.com/embed/SuTI-n84ezA"},
             {name: "Sissy Squat", img: "images/quads/Sissy Squat.jpg", url: "https://www.youtube.com/embed/f4ubaNbsq0Y"},
             {name: "Smith Machine Front Squat", img: "images/quads/Smith Machine Front Squat.jpg", url: "https://www.youtube.com/embed/NO-6L6Blneg"},
-        ],
+        ]
     };
 
     const muscleMap = {
