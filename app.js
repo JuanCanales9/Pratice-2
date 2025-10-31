@@ -449,7 +449,7 @@ function renderBodyDiagram(){
     const exercises = {
         chest: [
             {name: "Bench Press", img: "images/chest/Bench Press.jpg", url: "https://www.youtube.com/embed/hWbUlkb5Ms4"},
-            {name: "Close-Grip Bench Press", img: "images/chest/Close-Grip Bench Press", url: "https://www.youtube.com/embed/4yKLxOsrGfg"},
+            {name: "Close-Grip Bench Press", img: "images/chest/Close-Grip Bench Press.jpg", url: "https://www.youtube.com/embed/4yKLxOsrGfg"},
             {name: "Wide-Grip Bench Press", img: "images/chest/Wide-Grip Bench Press.jpg", url: "https://www.youtube.com/embed/NQNWLYJTtHA"},
             {name: "Incline Bench Press", img: "images/chest/Incline Bench Press.jpg", url: "https://www.youtube.com/embed/8fXfwG4ftaQ"},
             {name: "Decline Barbell Press", img: "images/chest/Decline Barbell Press.jpg", url: "https://www.youtube.com/embed/a-UFQE4oxWY"},
