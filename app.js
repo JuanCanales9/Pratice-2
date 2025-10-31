@@ -469,7 +469,7 @@ function renderBodyDiagram(){
             {name: "Incline Dumbbell Curls", img: "images/biceps/Incline-Dumbbell-Curl.jpg", url: ""},
             {name: "Reverse Curls", img: "images/biceps/Reverse-Curl.jpg", url: ""},
             {name: "Seated Alternating Dumbbell Curls", img: "images/biceps/Seated-Alternating-Dumbell-Curls.jpg", url: ""},
-            {name: "Standing Dumbbell Curls", img: "images/biceps/Standing-Dumbbell-Curls.jpg", url: ""},
+            {name: "Standing Dumbbell Curls", img: "images/biceps/Standing-Dumbbell-Curls.jpg", url: "https://www.youtube.com/shorts/oLyP6sORFOc"},
             {name: "Zottman Curls", img: "images/biceps/Zottman-Curls.jpg", url: ""}
         ],
         abs: [
